@@ -1,0 +1,478 @@
+@media screen and (max-width: 480px) {
+  #menu{
+    img{
+      max-width: 50px;
+    }
+  }
+  #carousel{
+    .carousel-caption{
+      top: 60%;
+      p{
+        display: none;
+      }
+      h6{
+        font-size: .9rem;
+      }
+      h3{
+        font-size: 2.5rem;
+      }
+    }
+    img{
+      min-height: 259px;
+      max-height: 259px;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  #accroche{
+    margin-top: 150px;
+
+    .accroche{
+      font-size: 1.1rem;
+      //font-weight: 600;
+
+      .label{
+        text-align: center;
+        padding: 20px 0;
+
+        span{
+          font-style: italic;
+          font-weight: 700;
+          color: $couleur-bleu;
+        }
+      }
+
+      .iob{
+        text-align: center;
+        padding: 20px 0;
+        font-weight: 800;
+        background-color: $couleur-verte;
+        color: white;
+      }
+    }
+  }
+  #domaines{
+    .domaine{
+      &-block{
+        padding: 30px 30px;
+      }
+    }
+  }
+  #equipe{
+    .equipe{
+      .profile{
+        img{
+          width: auto;
+          min-height: 329px;
+          max-height: 329px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  #footer{
+    .copyright{
+      .powered{
+        margin-top: 30px;
+        text-align: center;
+        color: #6571a9;
+      }
+      .copy{
+        text-align: center;
+      }
+    }
+  }
+  #page{
+    .page{
+      .sidebar{
+        display: none;
+      }
+      .content{
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #menu{
+    img{
+      max-width: 60px;
+    }
+    .navbar-collapse{
+      display: none;
+    }
+  }
+  #carousel{
+    .carousel-caption{
+      top: 55%;
+      h6{
+        font-size: 1.3rem;
+      }
+      h3{
+        font-size: 3.7rem;
+      }
+      p{
+        display: none
+      }
+    }
+
+    img{
+      min-height: 302px;
+      max-height: 302px;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  #accroche{
+    margin-top: 180px;
+
+    .accroche{
+      font-size: 1.1rem;
+
+      .label{
+        text-align: center;
+        padding: 20px 0;
+
+        span{
+          font-style: italic;
+          font-weight: 700;
+          color: $couleur-bleu;
+        }
+      }
+
+      .iob{
+        text-align: center;
+        padding: 20px 0;
+        font-weight: 800;
+        background-color: $couleur-verte;
+        color: white;
+      }
+    }
+  }
+  #domaines{
+    .domaine{
+      &-block{
+        padding: 30px 30px;
+      }
+    }
+  }
+  #equipe{
+    .equipe{
+      .profile{
+        img{
+          width: auto;
+          min-height: 350px;
+          max-height: 350px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  #footer{
+    .copyright{
+      .powered{
+        margin-top: 10px;
+        text-align: center;
+        color: #6571a9;
+      }
+      .copy{
+        text-align: center;
+      }
+    }
+  }
+  #page{
+    .page{
+      .sidebar{
+        display: none;
+      }
+      .content{
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  #menu{
+
+    .navbar-collapse{
+      display: none;
+    }
+  }
+  #carousel{
+    .carousel-caption{
+      h6{
+        font-size: 1.5rem;
+      }
+      h3{
+        font-size: 3rem;
+      }
+      p{
+        width: 100%;
+      }
+    }
+
+    img{
+      min-height: 488px;
+      max-height: 488px;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  #accroche{
+    margin-top: 359px;
+
+    .accroche{
+      font-size: 1.1rem;
+
+      .label{
+        text-align: center;
+        padding: 40px 0;
+        font-size: 1.4rem;
+
+        span{
+          font-style: italic;
+          font-weight: 700;
+          color: $couleur-bleu;
+        }
+      }
+
+      .iob{
+        text-align: center;
+        padding: 40px 0;
+        font-weight: 800;
+        background-color: $couleur-verte;
+        color: white;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  #domaines{
+    .domaine{
+      &-block{
+        padding: 30px;
+      }
+    }
+  }
+  #equipe{
+    .equipe{
+      .profile{
+        img{
+          width: auto;
+          min-height: 460px;
+          max-height: 460px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  #page{
+    .page{
+      .sidebar{
+        .contact{
+          display:none
+        }
+      }
+      .content{
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1280px) {
+  #carousel{
+    .carousel-caption{
+      top: 55%;
+      p{
+        width: 100%;
+        font-size: 1.2rem;
+      }
+      h3{
+        font-size: 3.3rem;
+      }
+      h6{
+        font-size: 1.7rem;
+      }
+    }
+
+    img{
+      min-height: 600px;
+      max-height: 600px;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  #accroche{
+    margin-top: 470px;
+
+    .accroche{
+      font-size: 1.1rem;
+
+      .label{
+        text-align: center;
+        padding: 40px 0;
+        font-size: 1.7rem;
+
+        span{
+          font-style: italic;
+          font-weight: 700;
+          color: $couleur-bleu;
+        }
+      }
+
+      .iob{
+        text-align: center;
+        padding: 40px 10px;
+        font-weight: 800;
+        background-color: $couleur-verte;
+        color: white;
+        font-size: 1.7rem;
+      }
+    }
+  }
+  #domaines{
+    .domaine{
+      h3{
+        &.titre{
+          font-weight: 700;
+          font-size: 1.3rem;
+        }
+      }
+      .content{
+        font-size: 1rem;
+        line-height: 1.7rem;
+      }
+    }
+  }
+  #equipe{
+    .equipe{
+      .profile{
+        img{
+          width: auto;
+          min-height: 300px;
+          max-height: 300px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+  #carousel{
+    img{
+      min-height: 786px;
+      max-height: 786px;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  #accroche{
+    margin-top: 650px;
+
+    .accroche{
+      font-size: 1.1rem;
+
+      .label{
+        text-align: center;
+        padding: 40px 0;
+        font-size: 2rem;
+
+        span{
+          font-style: italic;
+          font-weight: 700;
+          color: $couleur-bleu;
+        }
+      }
+
+      .iob{
+        text-align: center;
+        padding: 40px 10px;
+        font-weight: 800;
+        background-color: $couleur-verte;
+        color: white;
+        font-size: 2rem;
+      }
+    }
+  }
+  #domaines{
+    .domaine{
+      &-block{
+        h3{
+          &.titre{
+            font-size: 1.5rem;
+          }
+        }
+        .content{
+          font-size: 1rem;
+          line-height: 1.7rem;
+        }
+      }
+    }
+  }
+  #equipe{
+    .equipe{
+      .profile{
+        img{
+          width: auto;
+          min-height: 410px;
+          max-height: 410px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  #carousel{
+    img{
+      min-height: 1100px;
+      max-height: 1100px;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  #accroche{
+    margin-top: 1000px;
+
+    .accroche{
+      font-size: 1.1rem;
+
+      .label{
+        text-align: center;
+        padding: 40px 0;
+        font-size: 2.3rem;
+
+        span{
+          font-style: italic;
+          font-weight: 700;
+          color: $couleur-bleu;
+        }
+      }
+
+      .iob{
+        text-align: center;
+        padding: 40px 0;
+        font-weight: 800;
+        background-color: $couleur-verte;
+        color: white;
+        font-size: 2.3rem;
+      }
+    }
+  }
+  #equipe{
+    .equipe{
+      .profile{
+        img{
+          width: auto;
+          min-height: 410px;
+          max-height: 410px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
