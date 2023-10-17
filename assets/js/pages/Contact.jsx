@@ -68,7 +68,7 @@ export default function () {
                                 <h4>Localisation</h4>
                                 <h5>
                                     <a href="https://maps.app.goo.gl/1AHdsKvHNtsqfVJz8" target="_blank">
-                                        Cocody Mermoz - Imm. DIA | Abidjan, Côte d'Ivoire
+                                        Cocody Mermoz - Imm. DIA 4è étage | Abidjan, Côte d'Ivoire
                                     </a>
                                 </h5>
                             </Col>

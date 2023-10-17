@@ -25,14 +25,22 @@ import profileNdri from '../../images/equipe/dga.jpg';
 import profileGustave from '../../images/equipe/02-gustave.jpg';
 import profileSylla from '../../images/equipe/03-sylla.jpg';
 import logoBW from '../../images/logo/bw_logo.png';
+import {Helmet} from "react-helmet";
+import {NavLink} from "react-router-dom";
+import {BeatLoader} from "react-spinners";
+import {CircleSpinnerOverlay} from "react-spinner-overlay";
+import LazyLoad from 'react-lazyload';
 
 export default function () {
     const [maxCharacters, setMaxCharacters] = useState(80);
+    const [loading, setLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         AOS.init();
 
-        document.title = "Divine Finances et conseils";
+        setLoading(false)
+        setIsLoading(false);
 
         window.addEventListener("scroll", handleScroll);
 
@@ -112,9 +120,34 @@ export default function () {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+                <meta name="keywords" content="Finances, economiques, conseils, fonds" />
+                <meta name="description" content="Un partenaire crédible dans le conseil financier et stratégique." />
+                <link rel="canonical" href="https://divinefinancesci.com/" />
+                <link rel="next" href=" https://divinefinancesci.com/" />
+
+                <meta property="og:locale" content="fr_FR" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Divine Finances Conseils" />
+                <meta property="og:description" content="Un partenaire crédible dans le conseil financier et stratégique." />
+                <meta property="og:url" content="http://divinefinancesci.com/" />
+                <meta property="og:site_name" content="Divine Finances Conseils" />
+                <meta property="article:modified_time" content="2023-10-17T11:08:30+00:00" />
+                <meta property="og:image" content={logo} />
+                <meta property="og:image:type" content="image/svg+xml" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:description" content="Un partenaire crédible dans le conseil financier et stratégique."/>
+                <meta name="twitter:title" content="Divine Finances Conseils"/>
+                <meta name="twitter:domain" content="Un partenaire crédible dans le conseil financier et stratégique."/>
+                <meta name="twitter:image:src" content={logo}/>
+
+            </Helmet>
             <section id="carousel">
-                <Carousel fade controls={false}>
+                <Carousel fade controls={false} interval={7000}>
                     <Carousel.Item>
                         <img
                             src={slide1}
@@ -123,10 +156,12 @@ export default function () {
                             loading="lazy"
                         />
                         <Carousel.Caption>
-                            <h6>Divinie</h6>
+                            {/*<h6>Divine Finance Conseil</h6>*/}
                             <h3>Finances</h3>
                             <p>
-                                Nous accompagnons les entreprises avec des solutions concrètes aux problématiques de levée de fonds, d’optimisation financière, de structuration et de restructuration financière.
+                                Nous accompagnons les entreprises avec des solutions concrètes aux problématiques
+                                de levée de fonds, d’optimisation financière, de structuration et de restructuration
+                                financière.
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -138,67 +173,72 @@ export default function () {
                             loading="lazy"
                         />
                         <Carousel.Caption>
-                            <h6>Divine finances &</h6>
+                            {/*<h6>Divine finances &</h6>*/}
                             <h3>Conseils</h3>
                             <p>
-                                Une référence dans le conseil financier et stratégique en Afrique de l’Ouest dans des secteurs clés de l’économie tels que l’agro-industrie, les travaux publics, l’électricité, les services financiers, l’immobilier…
+                                Un partenaire crédible dans le conseil financier et stratégique en Côte d'Ivoire
+                                dans des secteurs clés de l’économie tels que l’agro-industrie, les travaux publics,
+                                l’électricité, les services financiers, l’immobilier…
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
             </section>
-
             <section id="accroche">
                 <div className="accroche">
                     <Row>
                         <Col sm={6} className="label" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="2000">
-                            <span>Divine Finances & Conseils</span>, agréée
+                            <span>Divine Finances Conseils</span>, agréée
                         </Col>
                         <Col sm={6} className="iob" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="2000">
                             <p>
-                                Intermédiaire en Opération de Banque (IOB)
+                                Intermédiaire en Opération de Banque <br/> (IOB N°: <u>CI 00004/IOB/2022</u>)
                             </p>
                         </Col>
                     </Row>
                 </div>
             </section>
-
             <section id="domaines">
                 <div className="domaine">
                     <Container fluid="lg">
                         <Row className="">
                             <Col lg={4} className="domaine-block" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="2500">
-                                <h3 className="titre">
-                                    <RiMoneyDollarCircleFill/>
-                                    Ingénierie Financière
-                                </h3>
-                                <div className="content">
-                                    <p>{truncatedContentIngenierie}</p>
-                                </div>
+                                <NavLink to='/nos-metiers/ingenierie-financiere'>
+                                    <h3 className="titre">
+                                        <RiMoneyDollarCircleFill/>
+                                        Ingénierie Financière
+                                    </h3>
+                                    <div className="content">
+                                        <p>{truncatedContentIngenierie}</p>
+                                    </div>
+                                </NavLink>
                             </Col>
                             <Col lg={4} className="domaine-block" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="2500">
-                                <h3 className="titre">
-                                    <GiReceiveMoney/>
-                                    Levée de fonds
-                                </h3>
-                                <div className="content">
-                                    <p>{truncatedContentLevee}</p>
-                                </div>
+                                <NavLink to="/nos-metiers/levee-de-fonds">
+                                    <h3 className="titre">
+                                        <GiReceiveMoney/>
+                                        Levée de fonds
+                                    </h3>
+                                    <div className="content">
+                                        <p>{truncatedContentLevee}</p>
+                                    </div>
+                                </NavLink>
                             </Col>
                             <Col lg={4} className="domaine-block" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="2500">
-                                <h3 className="titre">
-                                    <FaChalkboardUser/>
-                                    Conseils
-                                </h3>
-                                <div className="content">
-                                    <p>{truncatedContentConseils}</p>
-                                </div>
+                                <NavLink to="/nos-metiers/conseil-financier-et-strategique">
+                                    <h3 className="titre">
+                                        <FaChalkboardUser/>
+                                        Conseils
+                                    </h3>
+                                    <div className="content">
+                                        <p>{truncatedContentConseils}</p>
+                                    </div>
+                                </NavLink>
                             </Col>
                         </Row>
                     </Container>
                 </div>
             </section>
-
             <section id="metiers">
                 <div className="metier">
                     <Container fluid="lg">
@@ -206,7 +246,7 @@ export default function () {
 
                         <Row className="row-cols-1 row-cols-lg-3 g-4">
                             <Col data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="2500">
-                                <a href="#">
+                                <NavLink to="/nos-metiers/conseil-financier-et-strategique">
                                     <Card className="h-100">
                                         <Card.Img variant="top" src={metier1} />
                                         <Card.Body>
@@ -225,10 +265,10 @@ export default function () {
                                             <BsArrowRight/>
                                         </div>
                                     </Card>
-                                </a>
+                                </NavLink>
                             </Col>
                             <Col data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-duration="2500">
-                                <a href="#">
+                                <NavLink to="/nos-metiers/levee-de-fonds">
                                     <Card className="h-100">
                                         <Card.Img variant="top" src={metier2} />
                                         <Card.Body>
@@ -246,10 +286,10 @@ export default function () {
                                             <BsArrowRight/>
                                         </div>
                                     </Card>
-                                </a>
+                                </NavLink>
                             </Col>
                             <Col data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="2500">
-                                <a href="#">
+                                <NavLink to="/nos-metiers/ingenierie-financiere">
                                     <Card className="h-100">
                                         <Card.Img variant="top" src={metier3} />
                                         <Card.Body>
@@ -268,13 +308,12 @@ export default function () {
                                             <BsArrowRight/>
                                         </div>
                                     </Card>
-                                </a>
+                                </NavLink>
                             </Col>
                         </Row>
                     </Container>
                 </div>
             </section>
-
             <section id="performance">
                 <div className="performance">
                     <Container fluid="lg">
@@ -283,18 +322,24 @@ export default function () {
                                 <h1>Nos performances</h1>
                                 <ul>
                                     <li>
-                                        {puceFinance()} Levée de fonds de <span>20 millions d'euro</span>
+                                        {puceFinance()} Levée de fonds de <span>25 millions d'euro</span>
                                     </li>
                                     <li className="puce-principale">
-                                        {puceFinance()} Restructuration organisationnelle de <span>conglemérat de chacun dix (10) sociétés chacun </span>
+                                        {puceFinance()} Restructuration organisationnelle de <span> deux conglemérats de dix (10) sociétés chacun </span>
 
                                         <ul>
                                             <li>{puceFinance()} Rédaction des procédures de fonctionnement du groupe,</li>
                                             <li>{puceFinance()} Certification des comptes de toutes les filiales et leur consolidation comptable au sein de la holding,</li>
                                             <li>{puceFinance()} Rédaction et la revue des conventions et contrats entre la holding et les filiales</li>
-                                            <li>{puceFinance()} Rédaction du business plan du group</li>
+                                            <li>{puceFinance()} Rédaction du business plan du groupe</li>
                                             <li>{puceFinance()} Valorisation des fonds propres de toutes les filiales et de la holding</li>
                                         </ul>
+                                    </li>
+                                    <li>
+                                        Valorisation des fonds propres
+                                    </li>
+                                    <li>
+                                        Réalisation de Business Plan
                                     </li>
                                 </ul>
                             </Col>
@@ -305,7 +350,6 @@ export default function () {
                     </Container>
                 </div>
             </section>
-
             <section id="equipe">
                 <div className="equipe">
                     <Container fluid="lg">
@@ -361,7 +405,11 @@ export default function () {
                     </Container>
                 </div>
             </section>
-
+            {isLoading ? (
+                <div className="loading-animation">
+                    <CircleSpinnerOverlay/>
+                </div>
+            ): null}
         </div>
-    );
+    )
 }

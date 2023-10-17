@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url(animate.css/animate.css);
 body {
@@ -7,6 +8,14 @@ body {
 h1 {
   font-weight: 700;
   color: #01218e; }
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  /* Assurez-vous que le z-index est suffisamment élevé */ }
 
 #topHead {
   position: relative;
@@ -164,6 +173,9 @@ h1 {
     #domaines .domaine-block {
       cursor: pointer;
       padding: 50px 15px; }
+      #domaines .domaine-block a {
+        text-decoration: none;
+        color: inherit; }
       #domaines .domaine-block:hover {
         background: #01218e;
         color: white; }

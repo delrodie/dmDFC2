@@ -18,6 +18,15 @@ h1{
   color: $couleur-bleu;
 }
 
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Assurez-vous que le z-index est suffisamment élevé */
+}
+
+
 #topHead{
   position: relative;
   z-index: 1000;
@@ -245,6 +254,11 @@ h1{
       cursor: pointer;
       //border: solid 1px #f00;
       padding: 50px 15px;
+
+      a{
+        text-decoration: none;
+        color: inherit;
+      }
 
       &:hover{
         background: $couleur-bleu;

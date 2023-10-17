@@ -43,11 +43,11 @@ export default function () {
                                 <h4 className="content-titre">Nos réalisations</h4>
                                 <div className="paragraphe">
                                     <ul>
-                                        <li>Secteur BTP</li>
+                                        <li>Secteur agro-industrie</li>
                                         <ul>
-                                            <li>Mission effectuée : une levée de fonds auprès de la BNI</li>
+                                            <li>Mission effectuée : une levée de fonds auprès d'une structure financière</li>
                                         </ul>
-                                        <li className="mt-4">Restructuration organisationnelle de Grands Groups (Huit filiales)</li>
+                                        <li className="mt-4">Restructuration organisationnelle de deux Grands Groups de dix filiales chacun:</li>
                                         <ul>
                                             <li>Secteur BTP </li>
                                             <li>Secteur de la distribution de marchandises et produits pétroliers</li>
@@ -63,6 +63,17 @@ export default function () {
                                                     <li>La valorisation des fonds propres de toutes les filiales et de la holding</li>
                                                 </ul>
                                             </div>
+                                        </ul>
+                                        <li className="mt-4">Valorisation de fonds propres</li>
+                                        <ul>
+                                            <li>Secteur BTP (x2)</li>
+                                            <li>Secteur distribution</li>
+                                            <li>Secteur santé</li>
+                                        </ul>
+                                        <li className="mt-4">Réalisation de Business Plan</li>
+                                        <ul>
+                                            <li>Plus de vingt (20) business plans au cours de l'année 2022-2023</li>
+                                            <li>Valorisation du business plan</li>
                                         </ul>
                                     </ul>
                                 </div>

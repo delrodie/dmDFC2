@@ -14,6 +14,8 @@ import IngenierieFinancieres from "../pages/IngenierieFinancieres";
 import LeveeFonds from "../pages/LeveeFonds";
 import Performance from "../pages/Performance";
 import Contact from "../pages/Contact";
+import Valorisation from "../pages/Valorisation";
+import BusinessPlan from "../pages/BusinessPlan";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
             {
                 path: 'nos-metiers/levee-de-fonds',
                 element: <LeveeFonds/>
+            },
+            {
+                path: 'nos-metiers/valorisation-des-fonds-propres',
+                element: <Valorisation/>
+            },
+            {
+                path: 'nos-metiers/redaction-de-business-plan',
+                element: <BusinessPlan/>
             },
             {
                 path: 'nos-realisations',
@@ -162,10 +172,12 @@ function Root() {
                                         <NavLink to="/nos-metiers/conseil-financier-et-strategique" className="dropdown-item">Conseil financier et stratégique</NavLink>
                                         <NavLink to="/nos-metiers/ingenierie-financiere" className="dropdown-item">Ingénierie financière</NavLink>
                                         <NavLink to="/nos-metiers/levee-de-fonds" className="dropdown-item">Levée de fonds</NavLink>
+                                        <NavLink to="/nos-metiers/valorisation-des-fonds-propres" className="dropdown-item">Valorisation des fonds</NavLink>
+                                        <NavLink to="/nos-metiers/redaction-de-business-plan" className="dropdown-item">Rédaction de Business Plan</NavLink>
                                     </NavDropdown>
                                     {/*<NavLink className="nav-link" to="/nos-metiers">Nos metiers</NavLink>*/}
                                     <NavLink className="nav-link" to="/nos-realisations">Nos réalisations</NavLink>
-                                    <NavLink className="nav-link" to="/recrutement">Recrutement</NavLink>
+                                    <NavLink className="nav-link" to="/contact">Recrutement</NavLink>
                                     <NavLink className="nav-link" to="/contact">Contact</NavLink>
                                 </Nav>
                             </Navbar.Collapse>

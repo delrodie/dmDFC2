@@ -31,6 +31,16 @@ export default function () {
                             <LiaLongArrowAltRightSolid/> Levée de fonds
                         </a>
                     </li>
+                    <li>
+                        <a href="/nos-metiers/valorisation-des-fonds-propres">
+                            <LiaLongArrowAltRightSolid/> Valorisation de fonds
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/nos-metiers/redaction-de-business-plan">
+                            <LiaLongArrowAltRightSolid/> Rédaction de Business Plan
+                        </a>
+                    </li>
                     <li className="separateur"></li>
                     <li className="rubrique">
                         <a href="/presentation">
