@@ -128,7 +128,7 @@ export default function () {
                                     {/* reCAPTCHA Component */}
                                     <div className="my-4">
                                         <ReCAPTCHA
-                                            sitekey="6LdrDUoqAAAAAAf2E3t-G5RM_dEBIh4f7eVyvE1u" // Remplacez par votre clé publique
+                                            sitekey="6Le0JEoqAAAAACF2q2WURUHLowYBJTTE0TZMqDFh" // Remplacez par votre clé publique
                                             onChange={onCaptchaChange}
                                         />
                                     </div>
