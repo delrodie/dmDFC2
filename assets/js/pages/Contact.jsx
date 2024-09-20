@@ -1,20 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {Breadcrumb, Button, Col, Container, FloatingLabel, Form, Row} from "react-bootstrap";
 import BgHead from "../components/BgHead";
-import {LiaLongArrowAltRightSolid} from "react-icons/lia";
-import {FaLocationDot} from "react-icons/fa6";
-import {BsFillTelephoneFill} from "react-icons/bs";
-import {GrMail, GrMailOption} from "react-icons/gr";
 import AOS from 'aos';
-import SidebarPresentation from "../components/SidebarPresentation";
-import SidebarMetier from "../components/SidebarMetier";
-import SidebarPerformance from "../components/SidebarPerformance";
 import {IoIosMail} from "react-icons/io";
 import {GiRotaryPhone} from "react-icons/gi";
 import {FaMapMarkerAlt} from "react-icons/fa";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function () {
-    const [validated, setValidated] = useState(false)
+    const [validated, setValidated] = useState(false);
+    const [captchaValue, setCaptchaValue] = useState(null);
 
     useEffect(() => {
         AOS.init();
@@ -23,13 +18,18 @@ export default function () {
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
-        if (form.checkValidity() === false) {
+        if (form.checkValidity() === false || !captchaValue) {
             event.preventDefault();
             event.stopPropagation();
+            alert("Veuillez compléter le captcha avant de soumettre.");
         }
 
         setValidated(true);
-    }
+    };
+
+    const onCaptchaChange = (value) => {
+        setCaptchaValue(value); // Set the captcha value when the user completes it
+    };
 
     return (
         <div>
@@ -38,9 +38,6 @@ export default function () {
                 <Container>
                     <Breadcrumb>
                         <Breadcrumb.Item href="/">Accueil</Breadcrumb.Item>
-                        {/*<Breadcrumb.Item href="#">*/}
-                        {/*    Nos métiers*/}
-                        {/*</Breadcrumb.Item>*/}
                         <Breadcrumb.Item active>Contact</Breadcrumb.Item>
                     </Breadcrumb>
                 </Container>
@@ -127,6 +124,15 @@ export default function () {
                                             Veuillez entrer votre message
                                         </Form.Control.Feedback>
                                     </FloatingLabel>
+
+                                    {/* reCAPTCHA Component */}
+                                    <div className="my-4">
+                                        <ReCAPTCHA
+                                            sitekey="6LdrDUoqAAAAAAf2E3t-G5RM_dEBIh4f7eVyvE1u" // Remplacez par votre clé publique
+                                            onChange={onCaptchaChange}
+                                        />
+                                    </div>
+
                                     <div className="d-grid gap-2 mt-5">
                                         <Button variant="primary" size="lg" type="submit">Envoyer</Button>
                                     </div>
