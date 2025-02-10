@@ -807,5 +807,18 @@ h1{
   }
 }
 
+#financement{
+  margin-top: 30px;
+
+  .financement{
+    padding-top: 40px;
+    transition: 2s ease-in-out;
+
+    h2{
+      font-weight: 700;
+    }
+  }
+}
+
 
 @import "responsive";

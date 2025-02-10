@@ -16,6 +16,7 @@ import Performance from "../pages/Performance";
 import Contact from "../pages/Contact";
 import Valorisation from "../pages/Valorisation";
 import BusinessPlan from "../pages/BusinessPlan";
+import Financement from "../pages/Financement";
 
 const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
             {
                 path: 'nos-realisations',
                 element: <Performance/>
+            },
+            {
+                path: 'demande-de-financement-projet',
+                element: <Financement/>
             },
             {
                 path: 'contact',
@@ -177,7 +182,7 @@ function Root() {
                                     </NavDropdown>
                                     {/*<NavLink className="nav-link" to="/nos-metiers">Nos metiers</NavLink>*/}
                                     <NavLink className="nav-link" to="/nos-realisations">Nos réalisations</NavLink>
-                                    <NavLink className="nav-link" to="/contact">Recrutement</NavLink>
+                                    <NavLink className="nav-link" to="/demande-de-financement-projet">Financement</NavLink>
                                     <NavLink className="nav-link" to="/contact">Contact</NavLink>
                                 </Nav>
                             </Navbar.Collapse>
