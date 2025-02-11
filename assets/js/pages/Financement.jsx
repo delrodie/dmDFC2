@@ -9,7 +9,11 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 export default function () {
     const [validated, setValidated] = useState(false);
-    const [captchaValue, setCaptchaValue] = useState(null);
+    const [captchaValue, setCaptchaValue] = useState(true);
+    const  [formData, setFormData] = useState({
+        nom: '',
+        ativite: ''
+    });
 
     const [partenaireActive, setPartenaireActive] = useState(false);
     const [organismeActive, setOrganismeActive] = useState(false);
@@ -19,7 +23,12 @@ export default function () {
         document.title = "Demande de financement de projet";
     }, []);
 
-    const handleSubmit = (event) => {
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.nom]: e.target.value });
+    };
+
+    const handleSubmit = async (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false || !captchaValue) {
             event.preventDefault();
@@ -28,6 +37,22 @@ export default function () {
         }
 
         setValidated(true);
+
+        try {
+
+            const response = await fetch('http://localhost:8000/api/email/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(formData),
+            });
+
+            alert(5845);
+
+            const result = await response.json();
+            alert(result.success || result.error);
+        } catch (error) {
+            console.error('Erreur:', error);
+        }
     };
 
     const onCaptchaChange = (value) => {
@@ -70,7 +95,7 @@ export default function () {
                                                 className="mb-3"
                                             >
                                                 <Form.Control type="text" placeholder="nom" required autoComplete="off"
-                                                              name="nom"/>
+                                                              name="nom" onChange={handleChange}/>
                                                 <Form.Control.Feedback type="invalid">
                                                     Veuillez renseigner le nom de votre entreprise
                                                 </Form.Control.Feedback>

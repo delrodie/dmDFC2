@@ -17,6 +17,7 @@ import Contact from "../pages/Contact";
 import Valorisation from "../pages/Valorisation";
 import BusinessPlan from "../pages/BusinessPlan";
 import Financement from "../pages/Financement";
+import Financement2 from "../pages/Financement2";
 
 const router = createBrowserRouter([
     {
@@ -69,7 +70,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'demande-de-financement-projet',
-                element: <Financement/>
+                element: <Financement2/>
             },
             {
                 path: 'contact',
@@ -208,14 +209,26 @@ function Root() {
                                             onMouseEnter={handleDropdownToggle}
                                             onMouseLeave={handleDropdownToggle}
                                         >
-                                            <NavDropdown.Item href="#action/3.1">Présentation</NavDropdown.Item>
-                                            <NavDropdown.Item href="#action/3.2">Notre équipe</NavDropdown.Item>
+                                            <NavDropdown.Item href="/presentation">Présentation</NavDropdown.Item>
+                                            <NavDropdown.Item href="/notre-equipe">Notre équipe</NavDropdown.Item>
                                         </NavDropdown>
-                                        <Nav.Link href="#link">Nos metiers</Nav.Link>
-                                        <Nav.Link href="#link">Nos réalisations</Nav.Link>
+                                        <NavDropdown
+                                            title="Nos métiers"
+                                            id="metier-nav-dropdown"
+                                            show={isNosMetiersOpen}
+                                            onMouseEnter={handleNosMetiersToggle}
+                                            onMouseLeave={handleNosMetiersToggle}
+                                        >
+                                            <NavLink to="/nos-metiers/conseil-financier-et-strategique" className="dropdown-item">Conseil financier et stratégique</NavLink>
+                                            <NavLink to="/nos-metiers/ingenierie-financiere" className="dropdown-item">Ingénierie financière</NavLink>
+                                            <NavLink to="/nos-metiers/levee-de-fonds" className="dropdown-item">Levée de fonds</NavLink>
+                                            <NavLink to="/nos-metiers/valorisation-des-fonds-propres" className="dropdown-item">Valorisation des fonds</NavLink>
+                                            <NavLink to="/nos-metiers/redaction-de-business-plan" className="dropdown-item">Rédaction de Business Plan</NavLink>
+                                        </NavDropdown>
+                                        <NavLink className="nav-link" to="/nos-realisations">Nos réalisations</NavLink>
                                         {/*<Nav.Link href="#link">Actualités</Nav.Link>*/}
-                                        <Nav.Link href="#link">Récrutement</Nav.Link>
-                                        <Nav.Link href="#link">Contact</Nav.Link>
+                                        <NavLink className="nav-link" to="/demande-de-financement-projet">Financement</NavLink>
+                                        <NavLink className="nav-link" to="/contact">Contact</NavLink>
                                     </Nav>
                                 </Offcanvas.Body>
                             </Offcanvas>
@@ -238,12 +251,12 @@ function Root() {
                             <img src={logoBW} alt="Logo Divine Finances & Conseils" className="img-fluid"/>
                         </div>
                         <ul className="d-lg-flex justify-content-center align-content-center">
-                            <li><a href="#">Présentation</a></li>
-                            <li><a href="#">Equipe</a></li>
+                            <li><a href="/presentataion">Présentation</a></li>
+                            <li><a href="/notre-equipe">Equipe</a></li>
                             <li><a href="#">Métiers</a></li>
                             <li><a href="#">Réalisations</a></li>
-                            <li><a href="#">Recrutement</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Financement</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </Container>
                 </div>
@@ -255,7 +268,7 @@ function Root() {
                                 Tous droits réservés
                             </Col>
                             <Col sm={12} md={4} className="powered text-md-end text-sm-center">
-                                By <a href="https://dreammaker-ci.com">DREAM MAKER</a>
+                                By <a href="https://dreammaker-ci.com" target="_blank">DREAM MAKER</a>
                             </Col>
                         </Row>
                     </Container>
